@@ -5,8 +5,8 @@ function App() {
 
   return (
     <div>
-     <h1>this is a heading</h1>
-     <p>hi</p>
+      <h1>this is a heading</h1>
+      <p>hi</p>
     </div>
   )
 }
