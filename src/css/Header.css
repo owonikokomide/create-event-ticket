@@ -1,0 +1,70 @@
+.header{
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+}
+.logos{
+  flex: 1;
+}
+.log{
+  color: antiquewhite;
+  text-decoration: none;
+  font-size: 3rem;
+  text-shadow: 2px 2px #ff0000;
+}
+.nav{
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding: 2rem;
+  gap: 2rem;
+}
+.sign{
+  text-decoration: none;
+  columns: #02001c;
+  font-size: 1rem;
+  background-color:aliceblue;
+  padding: 0.5rem 2rem;
+  border-radius: 0.4rem;
+  border: 1px solid rgb(1, 1, 31);
+}
+.sign:hover{
+  background-color: rgb(69, 25, 111);
+  color: aliceblue;
+}
+
+/* CSS */
+.sign {
+  --b: 3px;   /* border thickness */
+  --s: .45em; /* size of the corner */
+  --color: #b9c4cf;
+  
+  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .6em;
+  font-size: 16px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.sign:hover,
+.sign:focus-visible{
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+}
+
+.sign:active {
+  background: var(--color);
+  color: #746d6d;
+}

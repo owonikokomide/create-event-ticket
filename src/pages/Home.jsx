@@ -1,9 +1,13 @@
 // landing page File
+import Header from "./Header"
+import '../css/Home.css'
+import Body from './Body'
 
 const Home = () => {
     return (
-        <div>
-            Landing page
+        <div className="contain">
+            <Header />
+            <Body />
         </div>
     )
 }

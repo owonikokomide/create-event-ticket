@@ -24,41 +24,43 @@ const Signin = () => {
   };
 
   return (
-    <form className="register-form" onSubmit={handleLogin}>
-      <div className="logo">logo</div>
-      <h1 className="reg-head">
-        Welcome back! <br /> Login to manage your ticket transactions.
-      </h1>
-      {error && <p className="error">{error}</p>}
-      <div className="input-group">
-        <label>Email:</label>
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Email"
-          required
-        />
-      </div>
-      <div className="input-group">
-        <label>Password:</label>
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
-          required
-        />
-      </div>
-      <div className="account">
-        Are you new?
-        <Link to="/register" className="sign-in">
-          {" "}
-          Register
-        </Link>
-      </div>
-      <button type="submit">Login</button>
-    </form>
+    <div className="all">
+      <form className="register-form" onSubmit={handleLogin}>
+        <div className="logo">logo</div>
+        <h1 className="reg-head">
+          Welcome back! <br /> Login to manage your ticket transactions.
+        </h1>
+        {error && <p className="error">{error}</p>}
+        <div className="input-group">
+          <label>Email:</label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email"
+            required
+          />
+        </div>
+        <div className="input-group">
+          <label>Password:</label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
+            required
+          />
+        </div>
+        <div className="account">
+          Are you new?
+          <Link to="/register" className="sign-in">
+            {" "}
+            Register
+          </Link>
+        </div>
+        <button type="submit">Login</button>
+      </form>
+    </div>
   );
 };
 
