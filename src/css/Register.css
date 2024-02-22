@@ -1,109 +1,116 @@
 /* Register.css */
-.all{
-  background-color: #171923;
-  width: 100%;
-  height: 100vh;
+.all {
+	background-color: #171923;
+	width: 100%;
+	height: 100vh;
 }
 .register-form {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60%;
-  border: 1px solid black;
-  border-radius: 12px;
-  background-color: #02001c;
-  color: white;
-  padding: 20px;
-  box-shadow: 14px 14px 20px #595e63, -14px -14px 20px rgb(86, 81, 81);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 60%;
+	border: 1px solid black;
+	border-radius: 12px;
+	background-color: #02001c;
+	color: white;
+	padding: 20px;
+	box-shadow: 14px 14px 20px #595e63, -14px -14px 20px rgb(86, 81, 81);
 }
 .logo {
-  margin: auto;
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  background-color: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
-  box-shadow: 0 0 20px 0 rgba(199, 198, 198, 0.5);
+	margin: auto;
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	background-color: transparent;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 10px;
+	box-shadow: 0 0 20px 0 rgba(199, 198, 198, 0.5);
 }
 .reg-head {
-  text-align: center;
-  margin-bottom: 10px;
-  font-size: 27px;
-  color: #e66205;
-  border-bottom: 1px dotted white;
-  padding-bottom: 10px;
+	text-align: center;
+	margin-bottom: 10px;
+	font-size: 27px;
+	color: #e66205;
+	border-bottom: 1px dotted white;
+	padding-bottom: 10px;
 }
 .input-layout {
-  display: grid;
-  grid-template-columns: 2fr 2fr;
-  gap: 20px;
+	display: grid;
+	grid-template-columns: 2fr 2fr;
+	gap: 20px;
 }
 
 .input-group {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  flex-direction: column;
+	display: flex;
+	gap: 10px;
+	align-items: flex-start;
+	flex-direction: column;
 }
 .input-group label {
-  font-weight: 900;
-  font-size: 18px;
+	font-weight: 900;
+	font-size: 18px;
 }
-.register-form input,
-.register-form button {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: none;
-  border-radius: 5px;
-  outline: none;
+.register-form input {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: none;
+	border-radius: 5px;
+	outline: none;
 }
 
 .register-form button {
-  width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 50%;
 }
 .register-form button {
-  background-color: #e66205;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
+	background-color: #e66205;
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+  width: 50%;
+	padding: 10px;
+	margin: auto;
+	border: none;
+	border-radius: 5px;
+	outline: none;
 }
 
 .register-form button:hover {
-  background-color: #ff7d2b;
+	background-color: #ff7d2b;
 }
 .account {
-  text-align: center;
-  margin-bottom: 10px;
-  font-style: italic;
+	text-align: center;
+	margin-bottom: 10px;
+	font-style: italic;
 }
 .account .sign-in {
-  text-decoration: none;
-  color: #e66205;
+	text-decoration: none;
+	color: #e66205;
 }
 .error {
-  border: 1px solid white;
-  padding: 1%;
-  background-color: rgb(42, 46, 69);
-  color: red;
-  border-radius: 10px;
-  font-weight: 600;
-  margin-bottom: 10px;
+	border: 1px solid white;
+	padding: 1%;
+	background-color: rgb(42, 46, 69);
+	color: red;
+	border-radius: 10px;
+	font-weight: 600;
+	margin-bottom: 10px;
 }
 
 @media (max-width: 640px) {
-  .register-form {
-    width: 100%;
-    border-radius: 0px;
-    padding: 40px 20px 20px 20px;
-    height: 100%;
-  }
-  .input-layout {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
+	.register-form {
+		width: 100%;
+		border-radius: 0px;
+		padding: 40px 20px 20px 20px;
+	}
+	.input-layout {
+		grid-template-columns: 1fr;
+		gap: 10px;
+	}
 }

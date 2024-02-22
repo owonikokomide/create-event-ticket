@@ -5,19 +5,26 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Home from './pages/Home';
 import RegisterForm from './pages/Register';
 import Signin from './pages/Signin';
+import Create_ticket from './pages/Create_ticket';
+import Ticket_registration from './pages/Ticket_registration';
 
 function App() {
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route index element={<Home />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/register" element={<RegisterForm />} />
-        <Route path="/login" element={<Signin />} />
-      </Routes>
-    </BrowserRouter>
-  );
+		<BrowserRouter>
+			<Routes>
+				<Route index element={<Home />} />
+				<Route path="/home" element={<Home />} />
+				<Route path="/register" element={<RegisterForm />} />
+				<Route path="/login" element={<Signin />} />
+				<Route path="/create-ticket" element={<Create_ticket />} />
+				<Route
+					path="/create-ticket/registration"
+					element={<Ticket_registration />}
+				/>
+			</Routes>
+		</BrowserRouter>
+	);
 }
 
 export default App
