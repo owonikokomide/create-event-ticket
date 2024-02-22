@@ -1,0 +1,236 @@
+* {
+	margin: 0%;
+	padding: 0%;
+	box-sizing: border-box;
+}
+:root {
+	--mazarine-blue: #273c75;
+    --orange: #e66205;
+}
+/* mode  */
+.light-mode {
+	--bg-color: #ffffff;
+	--text-color: #000000;
+	--bg-sidebar: #dcdde1;
+	--text-hover: #273c75;
+    --box-shadow: rgba(27, 27, 27, 0.5);
+}
+
+.dark-mode {
+	--bg-color: #222222;
+	--text-color: #ffffff;
+	--bg-sidebar: #353b48;
+	--text-hover: #f5f6fa;
+    --box-shadow: rgba(192, 192, 192, 0.5);
+}
+
+/* main style  */
+.App {
+	display: flex;
+	transition: background-color 0.3s ease;
+	background-color: var(--bg-color);
+	color: var(--text-color);
+}
+/* header  */
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 3%;
+	background-color: var(--bg-sidebar);
+	position: sticky;
+	width: 100%;
+	height: 60px;
+}
+header .menu-icon {
+	font-size: 30px;
+    padding-left: 3%;
+}
+/* sidebar  */
+.sidebar {
+	flex: 0.2;
+	padding: 2% 0 0 0;
+	height: 100vh;
+	position: relative;
+	background-color: var(--bg-sidebar);
+	transition: flex 0.3s ease; /* Added transition for sidebar width */
+}
+.sidebar .sidebar-logo {
+	font-size: 30px;
+	padding: 3%;
+}
+.sidebar.sidebar-collapsed {
+	flex: 0.05; /* Adjusted width for collapsed sidebar */
+}
+
+.sidebar .nav-links {
+	display: flex;
+	flex-direction: column;
+	margin-top: 20px;
+}
+
+.sidebar .nav-links .nav-link {
+	text-decoration: none;
+	color: var(--text-color);
+	padding: 6%;
+	border-bottom: 1px solid var(--bg-color);
+	border-top: 1px solid var(--bg-color);
+	display: flex;
+	gap: 10px;
+}
+.sidebar .nav-links .nav-link:hover {
+	background-color: var(--text-hover);
+	color: var(--bg-color);
+	transition: 600ms ease;
+	font-weight: 600;
+}
+.sidebar-collapsed .nav-links .nav-link {
+	padding: 16% 6%;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    font-size: 24px;
+}
+@media (max-width: 640px) {
+    .sidebar-collapsed .nav-links .nav-link {
+    font-size: 16px;
+}
+}
+.sidebar-collapsed .nav-links .nav-link span {
+	display: none; /* Hide text of links when sidebar is collapsed */
+}
+
+.main {
+	flex: 0.8;
+	transition: flex 0.3s ease;
+	position: relative;
+}
+.main.main-expanded {
+	flex: 0.95; /* Adjusted width for expanded main content when sidebar is collapsed */
+}
+/* the toggle button start */
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 55px;
+	height: 27px;
+}
+
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+	border-radius: 34px;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 20px;
+	width: 20px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+	border-radius: 50%;
+}
+
+input:checked + .slider {
+	background-color: var(--orange);
+}
+
+input:focus + .slider {
+	box-shadow: 0 0 1px var(--orange);
+}
+
+input:checked + .slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+	border-radius: 34px;
+}
+
+.slider.round:before {
+	border-radius: 50%;
+}
+/* the toggle button ends */
+/* main-content  */
+.main-content {
+	padding: 3%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	box-shadow: 0 10px 20px var(--box-shadow);
+	border-radius: 12px 0 12px 0;
+	text-align: center;
+}
+.main-content h3{
+    color: var(--orange);
+}
+.main-content p {
+	margin: 10px 0 10px 0;
+    line-height: 24px;
+}
+@media (max-width: 640px) {
+    .main-content{
+        width: 90%;
+    }
+}
+.btn:link,
+.btn:visited {
+	text-decoration: none;
+	color: var(--text-color);
+	padding: 10px 30px;
+	border: 1px solid;
+	border-radius: 1000px;
+	display: inline-block;
+	transition: all 0.2s;
+	position: relative;
+}
+
+.btn:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 10px 20px rgba(27, 27, 27, 0.5);
+}
+
+.btn:active {
+	transform: translateY(-3px);
+}
+
+.btn::after {
+	content: "";
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	border-radius: 100px;
+	top: 0;
+	left: 0;
+	position: absolute;
+	z-index: -1;
+	transition: all 0.3s;
+}
+
+.btn:hover::after {
+	background-color: var(--orange);
+	transform: scaleX(1.4) scaleY(1.5);
+	opacity: 0;
+}
