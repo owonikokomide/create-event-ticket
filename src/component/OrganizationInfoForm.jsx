@@ -14,7 +14,7 @@ const OrganizationInfoForm = ({ nextStep }) => {
 			<h2>Step 1: Organizer Information</h2>
 			{/* Organization information form fields go here */}
 			<div className="form-group">
-				<label htmlFor="organizationName">Organizer Name:</label>
+				<label htmlFor="organizationName">Organizer Name</label>
 				<input type="text" name="organizationName" required />
 			</div>
 			<div className="form-group">
