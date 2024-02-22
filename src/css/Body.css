@@ -2,18 +2,19 @@
   display: flex;
   /* margin-top: 1rem; */
 }
-.left{
+.left{   
   flex: 1;
 }
 .right{
   flex: 1;
 }
-.page{
-  color: aliceblue;
+.page{    
+  color: aliceblue; 
   margin-top: 12rem;
   padding: 0rem 3rem;
 }
 .text-head{
+  
   color: #e66205;
   font-size: 3rem;
   font-family: Arial, Helvetica, sans-serif;
