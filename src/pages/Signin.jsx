@@ -13,10 +13,10 @@ const Signin = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     // Simulate login (replace this with actual authentication logic)
-    if (email === "admin" && password === "password") {
+    if (email === "admin@gmail.com" && password === "password") {
       // Successful login
       alert("Login successful!");
-      navigate("/home");
+      navigate("/create-ticket");
     } else {
       // Failed login
       setError("Invalid username or password");
