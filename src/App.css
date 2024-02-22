@@ -14,6 +14,7 @@
 	--bg-sidebar: #dcdde1;
 	--text-hover: #273c75;
     --box-shadow: rgba(27, 27, 27, 0.5);
+    --bg-input: #7f8fa6;
 }
 
 .dark-mode {
@@ -22,6 +23,8 @@
 	--bg-sidebar: #353b48;
 	--text-hover: #f5f6fa;
     --box-shadow: rgba(192, 192, 192, 0.5);
+    --bg-input:#ffffff;
+
 }
 
 /* main style  */

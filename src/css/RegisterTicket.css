@@ -1,0 +1,126 @@
+.register-ticket {
+	text-align: left;
+	margin-top: 20px;
+}
+.register-ticket h2 {
+	font-size: 18px;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+.register-ticket .form-group {
+	display: grid;
+	align-items: center;
+	grid-template-columns: 1fr 2fr;
+	gap: 10px;
+	width: 100%;
+	margin-bottom: 10px;
+}
+.register-ticket .form-group input,
+.register-ticket .form-group select,
+.register-ticket .form-group textarea {
+	padding: 8px;
+	border: none;
+	border-radius: 5px;
+	outline: none;
+	width: 100%;
+	background-color: var(--bg-input);
+	color: var(--bg-color);
+}
+/* button  */
+.register-ticket .form-group-btn{display: flex;align-items: center;justify-content: space-between;}
+.register-ticket .form-group-btn .next,
+.register-ticket .form-group-btn .prev {
+	--color: 255, 165, 0;
+	border-radius: 0.5em;
+	transition: 0.3s;
+	background-color: rgba(var(--color), 0.2);
+	color: rgb(var(--color));
+	fill: rgb(var(--color));
+	font-family: monospace;
+	font-weight: bolder;
+	font-size: x-large;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	cursor: pointer;
+	border: 2px solid rgb(var(--color));
+	box-shadow: 0 0 10px rgba(var(--color), 0.4);
+	outline: none;
+	display: flex;
+	align-items: center;
+	padding: 0.2em 0.8em;
+}
+
+.register-ticket .form-group-btn .next:hover,
+.register-ticket .form-group-btn .prev:hover {
+	box-shadow: 0 0 0 5px rgba(var(--color), 0.5);
+}
+
+.register-ticket .form-group-btn .next span,
+.register-ticket .form-group-btn .prev span {
+	transform: scale(0.8);
+	transition: 0.3s;
+}
+
+.register-ticket .form-group-btn .next:hover span,
+.register-ticket .form-group-btn .prev:hover span {
+	transform: scale(0.8);
+}
+
+.register-ticket .form-group-btn .next svg,
+.register-ticket .form-group-btn .prev svg {
+	font-size: 0;
+	transform: scale(0.3) translateX(0%) rotate(-180deg);
+	transition: 0.3s;
+}
+
+.register-ticket .form-group-btn .next:hover svg {
+	font-size: 20px;
+	transform: scale(1) translateX(20%) rotate(0deg);
+}
+.register-ticket .form-group-btn .prev:hover svg {
+	font-size: 20px;
+	transform: scale(1) translateX(20%) rotate(180deg);
+}
+
+.register-ticket .form-group-btn .next:active,
+.register-ticket .form-group-btn .prev:active {
+	transition: 0s;
+	box-shadow: 0 0 0 5px rgb(var(--color));
+}
+/* submit btn  */
+.submitBtn {
+  width: 120px;
+  height: 40px;
+  border-radius: 30px;
+  border: none;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.13);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(to left,rgb(230, 35, 0),rgb(255, 174, 0));
+  letter-spacing: 0.7px;
+}
+
+.submitBtn:hover .arrow {
+  animation: slide-in-left 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+.submitBtn:active {
+  transform: scale(0.97);
+}
