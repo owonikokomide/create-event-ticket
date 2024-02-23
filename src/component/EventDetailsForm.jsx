@@ -1,6 +1,18 @@
 import PropTypes from "prop-types";
+import { useState } from "react";
 
 const EventDetailsForm = ({ nextStep, prevStep }) => {
+	const [ticketOption, setTicketOption] = useState("unlimited");
+	const [ticketCount, setTicketCount] = useState("");
+
+	const handleOptionChange = (e) => {
+		setTicketOption(e.target.value);
+	};
+
+	const handleTicketCountChange = (e) => {
+		setTicketCount(e.target.value);
+	};
+
 	// Handle form submission for event details
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -30,10 +42,34 @@ const EventDetailsForm = ({ nextStep, prevStep }) => {
 				<input type="text" id="eventLocation" name="eventLocation" required />
 			</div>
 			<div className="form-group">
+				<label htmlFor="price">Price</label>
+				<input type="number" id="price" name="price" required />
+			</div>
+			<div className="form-group">
 				<label htmlFor="eventDescription">Description</label>
 				<textarea id="eventDescription" name="eventDescription" required />
 			</div>
-
+			<div className="form-group">
+				<label htmlFor="ticketAvailability">Ticket Available for Sales</label>
+				<select
+					id="ticketAvailability"
+					name="ticketAvailability"
+					className="form-control"
+					onChange={handleOptionChange}
+				>
+					<option value="unlimited">Unlimited</option>
+					<option value="limited">Limited</option>
+				</select>
+				{ticketOption === "limited" && (
+					<input
+						type="number"
+						value={ticketCount}
+						onChange={handleTicketCountChange}
+						placeholder="Enter number of tickets available"
+						required
+					/>
+				)}
+			</div>
 			<div className="form-group-btn">
 				<button className="prev" type="button" onClick={prevStep}>
 					<svg
