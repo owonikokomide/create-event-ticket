@@ -9,4 +9,5 @@
 }
 body{
   font-family: myFont;
+  overflow: hidden;
 }

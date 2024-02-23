@@ -3,9 +3,25 @@
 	padding: 0%;
 	box-sizing: border-box;
 }
+::-webkit-scrollbar {
+	width: 5px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+	background: var(--bg-color); /* Color of the track */
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--orange); /* Color of the thumb */
+	border-radius: 5px; /* Radius of the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #b53f01; /* Color of the thumb on hover */
+}
 :root {
 	--mazarine-blue: #273c75;
-    --orange: #e66205;
+	--orange: #e66205;
 }
 /* mode  */
 .light-mode {
@@ -13,8 +29,8 @@
 	--text-color: #000000;
 	--bg-sidebar: #dcdde1;
 	--text-hover: #273c75;
-    --box-shadow: rgba(27, 27, 27, 0.5);
-    --bg-input: #7f8fa6;
+	--box-shadow: rgba(27, 27, 27, 0.5);
+	--bg-input: #7f8fa6;
 }
 
 .dark-mode {
@@ -22,9 +38,8 @@
 	--text-color: #ffffff;
 	--bg-sidebar: #353b48;
 	--text-hover: #f5f6fa;
-    --box-shadow: rgba(192, 192, 192, 0.5);
-    --bg-input:#ffffff;
-
+	--box-shadow: rgba(192, 192, 192, 0.5);
+	--bg-input: #ffffff;
 }
 
 /* main style  */
@@ -42,12 +57,14 @@ header {
 	padding: 3%;
 	background-color: var(--bg-sidebar);
 	position: sticky;
+	top: 0;
 	width: 100%;
 	height: 60px;
+	z-index: 1;
 }
 header .menu-icon {
 	font-size: 30px;
-    padding-left: 3%;
+	padding-left: 3%;
 }
 /* sidebar  */
 .sidebar {
@@ -93,12 +110,12 @@ header .menu-icon {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-    font-size: 24px;
+	font-size: 24px;
 }
 @media (max-width: 640px) {
-    .sidebar-collapsed .nav-links .nav-link {
-    font-size: 16px;
-}
+	.sidebar-collapsed .nav-links .nav-link {
+		font-size: 16px;
+	}
 }
 .sidebar-collapsed .nav-links .nav-link span {
 	display: none; /* Hide text of links when sidebar is collapsed */
@@ -108,6 +125,8 @@ header .menu-icon {
 	flex: 0.8;
 	transition: flex 0.3s ease;
 	position: relative;
+	overflow-y: scroll;
+	height: 100vh;
 }
 .main.main-expanded {
 	flex: 0.95; /* Adjusted width for expanded main content when sidebar is collapsed */
@@ -178,25 +197,23 @@ input:checked + .slider:before {
 /* main-content  */
 .main-content {
 	padding: 3%;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+	width: 70%;
+	margin: 20px auto;
 	box-shadow: 0 10px 20px var(--box-shadow);
 	border-radius: 12px 0 12px 0;
 	text-align: center;
 }
-.main-content h3{
-    color: var(--orange);
+.main-content h3 {
+	color: var(--orange);
 }
 .main-content p {
 	margin: 10px 0 10px 0;
-    line-height: 24px;
+	line-height: 24px;
 }
 @media (max-width: 640px) {
-    .main-content{
-        width: 90%;
-    }
+	.main-content {
+		width: 90%;
+	}
 }
 .btn:link,
 .btn:visited {

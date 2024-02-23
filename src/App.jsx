@@ -1,16 +1,16 @@
 // added the css file
-import './App.css'
+import "./App.css";
 // adding the components for changing pages
-import { BrowserRouter, Routes, Route} from 'react-router-dom';
-import Home from './pages/Home';
-import RegisterForm from './pages/Register';
-import Signin from './pages/Signin';
-import Create_ticket from './pages/Create_ticket';
-import Ticket_registration from './pages/Ticket_registration';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import RegisterForm from "./pages/Register";
+import Signin from "./pages/Signin";
+import Create_ticket from "./pages/Create_ticket";
+import Ticket_registration from "./pages/Ticket_registration";
+import Axiospost from "./component/Axiospost";
 
 function App() {
-
-  return (
+	return (
 		<BrowserRouter>
 			<Routes>
 				<Route index element={<Home />} />
@@ -22,9 +22,13 @@ function App() {
 					path="/create-ticket/registration"
 					element={<Ticket_registration />}
 				/>
+				<Route
+					path="/axios"
+					element={<Axiospost />}
+				/>
 			</Routes>
 		</BrowserRouter>
 	);
 }
 
-export default App
+export default App;

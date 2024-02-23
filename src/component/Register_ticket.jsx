@@ -62,21 +62,23 @@ const Register_ticket = ({
   };
 
   return (
-    <div className={`main ${sidebarCollapsed ? "main-expanded" : ""}`}>
-      <Header
-        toggleMode={toggleMode}
-        darkMode={darkMode}
-        toggleSidebar={toggleSidebar}
-        sidebarCollapsed={sidebarCollapsed}
-      />
-      <div className="main-content">
-        <h3>Welcome to our event registration!</h3>
-        <p>Please fill out the following form to register for the event.</p>
-        {/* Render the form based on the current step */}
-        {renderFormStep()}
-      </div>
-    </div>
-  );
+		<div className={`main ${sidebarCollapsed ? "main-expanded" : ""}`}>
+			<Header
+				toggleMode={toggleMode}
+				darkMode={darkMode}
+				toggleSidebar={toggleSidebar}
+				sidebarCollapsed={sidebarCollapsed}
+			/>
+			<div className="main-content">
+				<div className="content">
+					<h3>Welcome to our event registration!</h3>
+					<p>Please fill out the following form to register for the event.</p>
+					{/* Render the form based on the current step */}
+					{renderFormStep()}
+				</div>
+			</div>
+		</div>
+	);
 };
 
 Register_ticket.propTypes = {
