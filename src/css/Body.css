@@ -23,3 +23,13 @@
 .text-head-span{
   color: aliceblue;
 }
+.icon{
+  color: aliceblue;
+  font-size: 3rem;
+}
+.down-left{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-left: 3rem;
+}

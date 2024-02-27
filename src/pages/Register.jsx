@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react"; // Importing useState hook from React library
 
 import "../css/Register.css"; // Importing CSS styles for the component
