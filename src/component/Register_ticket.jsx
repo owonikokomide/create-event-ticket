@@ -5,63 +5,70 @@ import OrganizationInfoForm from "./OrganizationInfoForm";
 import EventDetailsForm from "./EventDetailsForm";
 import AccountInfoForm from "./AccountInfoForm";
 import '../css/RegisterTicket.css'
+import Modal from "./Modal";
 
 const Register_ticket = ({
-  toggleMode,
-  darkMode,
-  toggleSidebar,
-  sidebarCollapsed,
+	toggleMode,
+	darkMode,
+	toggleSidebar,
+	sidebarCollapsed,
 }) => {
-  const [step, setStep] = useState(1); // State to manage form steps
+	const [step, setStep] = useState(1); // State to manage form steps
+	const [showModal, setShowModal] = useState(false); // State to manage modal visibility
 
-  const nextStep = () => {
-    setStep((prevStep) => prevStep + 1);
-  };
+	const nextStep = () => {
+		setStep((prevStep) => prevStep + 1);
+	};
 
-  const prevStep = () => {
-    setStep((prevStep) => prevStep - 1);
-  };
+	const prevStep = () => {
+		setStep((prevStep) => prevStep - 1);
+	};
 
-  // Render form based on the current step
-  const renderFormStep = () => {
-    switch (step) {
-      case 1:
-        return (
-          <OrganizationInfoForm
-            nextStep={nextStep}
-            darkMode={darkMode}
-            toggleMode={toggleMode}
-            toggleSidebar={toggleSidebar}
-            sidebarCollapsed={sidebarCollapsed}
-          />
-        );
-      case 2:
-        return (
-          <EventDetailsForm
-            nextStep={nextStep}
-            prevStep={prevStep}
-            darkMode={darkMode}
-            toggleMode={toggleMode}
-            toggleSidebar={toggleSidebar}
-            sidebarCollapsed={sidebarCollapsed}
-          />
-        );
-      case 3:
-        return (
-          <AccountInfoForm
-            prevStep={prevStep}
-            darkMode={darkMode}
-            toggleMode={toggleMode}
-            toggleSidebar={toggleSidebar}
-            sidebarCollapsed={sidebarCollapsed}
-          />
-        );
-      default:
-        return null;
-    }
-  };
+	const toggleModal = () => {
+		setShowModal(!showModal);
+	};
 
-  return (
+	// Render form based on the current step
+	const renderFormStep = () => {
+		switch (step) {
+			case 1:
+				return (
+					<OrganizationInfoForm
+						nextStep={nextStep}
+						darkMode={darkMode}
+						toggleMode={toggleMode}
+						toggleSidebar={toggleSidebar}
+						sidebarCollapsed={sidebarCollapsed}
+					/>
+				);
+			case 2:
+				return (
+					<EventDetailsForm
+						nextStep={nextStep}
+						prevStep={prevStep}
+						darkMode={darkMode}
+						toggleMode={toggleMode}
+						toggleSidebar={toggleSidebar}
+						sidebarCollapsed={sidebarCollapsed}
+					/>
+				);
+			case 3:
+				return (
+					<AccountInfoForm
+						prevStep={prevStep}
+						darkMode={darkMode}
+						toggleMode={toggleMode}
+						toggleSidebar={toggleSidebar}
+						sidebarCollapsed={sidebarCollapsed}
+						toggleModal={toggleModal} // Pass toggleModal function to AccountInfoForm
+					/>
+				);
+			default:
+				return null;
+		}
+	};
+
+	return (
 		<div className={`main ${sidebarCollapsed ? "main-expanded" : ""}`}>
 			<Header
 				toggleMode={toggleMode}
@@ -77,15 +84,17 @@ const Register_ticket = ({
 					{renderFormStep()}
 				</div>
 			</div>
+			{/* Render the modal if showModal is true */}
+			{showModal && <Modal closeModal={toggleModal} />}
 		</div>
 	);
 };
 
 Register_ticket.propTypes = {
-  toggleMode: PropTypes.func.isRequired, // toggleMode should be a function and is required
-  darkMode: PropTypes.bool.isRequired, // darkMode should be a boolean and is required
-  toggleSidebar: PropTypes.func.isRequired, // toggleSidebar should be a function and is required
-  sidebarCollapsed: PropTypes.bool.isRequired, // sidebarCollapsed should be a boolean and is required
+	toggleMode: PropTypes.func.isRequired,
+	darkMode: PropTypes.bool.isRequired,
+	toggleSidebar: PropTypes.func.isRequired,
+	sidebarCollapsed: PropTypes.bool.isRequired,
 };
 
 export default Register_ticket;

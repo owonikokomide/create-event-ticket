@@ -1,10 +1,11 @@
 import PropTypes from "prop-types";
 
-const AccountInfoForm = ({ prevStep }) => {
+const AccountInfoForm = ({ prevStep, toggleModal }) => {
 	// Handle form submission for account information
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		// Add logic to handle form submission (e.g., sending data to backend)
+		toggleModal();
 	};
 
 	return (
@@ -63,6 +64,7 @@ AccountInfoForm.propTypes = {
 	toggleMode: PropTypes.func.isRequired,
 	toggleSidebar: PropTypes.func.isRequired,
 	sidebarCollapsed: PropTypes.bool.isRequired,
+	toggleModal: PropTypes.func.isRequired,
 };
 
 export default AccountInfoForm;
