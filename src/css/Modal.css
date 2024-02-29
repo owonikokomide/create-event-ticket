@@ -13,11 +13,12 @@
 .modal-content {
 	background-color: white;
 	padding: 20px;
-    color: black;
+	color: black;
 	border-radius: 8px;
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 	max-width: 80%;
 	max-height: 80%;
+	text-align: center;
 	overflow-y: auto; /* Enable scrolling if content exceeds modal height */
 }
 
@@ -34,6 +35,38 @@
 
 .modal-body {
 	margin-bottom: 20px;
+}
+.modal-body p {
+	margin: 30px 0;
+}
+.modal-body .design-btn {
+	margin-top: 50px;
+	text-decoration: none;
+	background-color: var(--mazarine-blue);
+	padding: 14px 40px;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	cursor: pointer;
+	border-radius: 10px;
+	border: 2px dashed var(--orange);
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+		rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+	transition: 0.4s;
+}
+.modal-body .design-btn span:last-child {
+	display: none;
+}
+
+.modal-body .design-btn:hover {
+	transition: 0.4s;
+	border: 2px dashed var(--orange);
+	background-color: #fff;
+	color: var(--orange);
+}
+
+.modal-body .design-btn:active {
+	background-color: #87dbd0;
 }
 
 .modal-footer {
@@ -52,4 +85,27 @@
 
 .modal-close-btn:hover {
 	color: #555;
+}
+/* for svg  */
+@keyframes drawCheck {
+	0% {
+		stroke-dashoffset: 80;
+	}
+	100% {
+		stroke-dashoffset: 0;
+	}
+}
+.modal svg {
+	width: 200px;
+	height: 200px;
+	background-color: green;
+	border-radius: 50%;
+}
+.modal path {
+	fill: none;
+	stroke: white;
+	stroke-width: 2;
+	stroke-dasharray: 80;
+	stroke-dashoffset: 80;
+	animation: drawCheck 1s ease forwards infinite;
 }
