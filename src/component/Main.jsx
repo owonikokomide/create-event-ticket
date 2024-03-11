@@ -12,17 +12,20 @@ const Main = ({ toggleMode, darkMode, toggleSidebar, sidebarCollapsed }) => {
 				sidebarCollapsed={sidebarCollapsed}
 			/>
 			<div className="main-content">
-				<h3>
-					Organize all your events effortlessly and ensure smooth ticket sales.
-				</h3>
-				<p>
-					Welcome to our event management platform! Here, you can easily create
-					and manage tickets for your events. Simply click the button below to
-					get started.
-				</p>
-				<Link to="/create-ticket/registration" className="btn">
-					Create Event
-				</Link>
+				<div className="content">
+					<h3>
+						Organize all your events effortlessly and ensure smooth ticket
+						sales.
+					</h3>
+					<p>
+						Welcome to our event management platform! Here, you can easily
+						create and manage tickets for your events. Simply click the button
+						below to get started.
+					</p>
+					<Link to="/create-ticket/registration" className="btn">
+						Create Event
+					</Link>
+				</div>
 			</div>
 		</div>
 	);
