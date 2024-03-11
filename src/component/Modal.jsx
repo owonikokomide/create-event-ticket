@@ -19,7 +19,7 @@ const Modal = ({ closeModal }) => {
 					<p>
 						You have successfully created a ticket. Now, design your ticket.
 					</p>
-					<Link onClick={closeModal} className="design-btn" to="/design">
+					<Link onClick={closeModal} className="design-btn" to="/design-ticket">
 						Design Ticket
 					</Link>
 				</div>

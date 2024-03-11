@@ -8,6 +8,7 @@ import Signin from "./pages/Signin";
 import Create_ticket from "./pages/Create_ticket";
 import Ticket_registration from "./pages/Ticket_registration";
 import Axiospost from "./component/Axiospost";
+import Design_Ticket from "./pages/Design_Ticket";
 
 function App() {
 	return (
@@ -22,10 +23,8 @@ function App() {
 					path="/create-ticket/registration"
 					element={<Ticket_registration />}
 				/>
-				<Route
-					path="/axios"
-					element={<Axiospost />}
-				/>
+				<Route path="/axios" element={<Axiospost />} />
+				<Route path="/design-ticket" element={<Design_Ticket />} />
 			</Routes>
 		</BrowserRouter>
 	);
