@@ -65,6 +65,7 @@ header {
 header .menu-icon {
 	font-size: 30px;
 	padding-left: 3%;
+	cursor: pointer;
 }
 /* sidebar  */
 .sidebar {
@@ -222,6 +223,9 @@ input:checked + .slider:before {
 }
 @media (max-width: 640px) {
 	.main-content {
+		width: 100%;
+	}
+	.content{
 		width: 90%;
 	}
 }
