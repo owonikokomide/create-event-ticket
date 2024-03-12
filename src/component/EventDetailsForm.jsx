@@ -50,6 +50,10 @@ const EventDetailsForm = ({ nextStep, prevStep }) => {
 				<textarea id="eventDescription" name="eventDescription" required />
 			</div>
 			<div className="form-group">
+				<label htmlFor="event-image">Event Image:</label>
+				<input type="file" id="event-image" name="eventImage" />
+			</div>
+			<div className="form-group">
 				<label htmlFor="ticketAvailability">Ticket Available for Sales</label>
 				<select
 					id="ticketAvailability"
