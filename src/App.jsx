@@ -9,6 +9,7 @@ import Create_ticket from "./pages/Create_ticket";
 import Ticket_registration from "./pages/Ticket_registration";
 import Axiospost from "./component/Axiospost";
 import Design_Ticket from "./pages/Design_Ticket";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
 	return (
@@ -25,6 +26,7 @@ function App() {
 				/>
 				<Route path="/axios" element={<Axiospost />} />
 				<Route path="/design-ticket" element={<Design_Ticket />} />
+				<Route path="/dashboard" element={<Dashboard />} />
 			</Routes>
 		</BrowserRouter>
 	);

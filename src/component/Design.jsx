@@ -75,54 +75,7 @@ const Design = ({ toggleMode, darkMode, toggleSidebar, sidebarCollapsed }) => {
 				sidebarCollapsed={sidebarCollapsed}
 			/>
 			<div className="main-content">
-				<div>
-					<div
-						id="ticketPreview"
-						className="ticket-preview"
-						style={{ backgroundColor }}
-					>
-						<h1
-							style={{
-								fontSize: `${eventNameFontSize}px`,
-								color: eventNameColor,
-								fontWeight: eventNameFontWeight,
-								fontStyle: eventNameFontStyle,
-							}}
-						>
-							Event Name: 50th Birthday Party
-						</h1>
-						<p
-							style={{
-								fontSize: `${dateFontSize}px`,
-								color: dateColor,
-								fontWeight: dateFontWeight,
-								fontStyle: dateFontStyle,
-							}}
-						>
-							Date: February 20, 2024
-						</p>
-						<p
-							style={{
-								fontSize: `${locationFontSize}px`,
-								color: locationColor,
-								fontWeight: locationFontWeight,
-								fontStyle: locationFontStyle,
-							}}
-						>
-							Location: 120, Adekunle Fajuyi Road
-						</p>
-						<p
-							style={{
-								fontSize: `${timeFontSize}px`,
-								color: timeColor,
-								fontWeight: timeFontWeight,
-								fontStyle: timeFontStyle,
-							}}
-						>
-							Time: 8:00 PM
-						</p>
-					</div>
-
+				<div className="design">
 					<div className="options">
 						<label htmlFor="backgroundColorType">Background Type:</label>
 						<select
@@ -314,6 +267,54 @@ const Design = ({ toggleMode, darkMode, toggleSidebar, sidebarCollapsed }) => {
 						/>
 
 						<button onClick={generateTicket}>Generate Ticket</button>
+					</div>
+					<div className="inner">
+						<div
+							id="ticketPreview"
+							className="ticket-preview"
+							style={{ backgroundColor }}
+						>
+							<h1
+								style={{
+									fontSize: `${eventNameFontSize}px`,
+									color: eventNameColor,
+									fontWeight: eventNameFontWeight,
+									fontStyle: eventNameFontStyle,
+								}}
+							>
+								Event Name: 50th Birthday Party
+							</h1>
+							<p
+								style={{
+									fontSize: `${dateFontSize}px`,
+									color: dateColor,
+									fontWeight: dateFontWeight,
+									fontStyle: dateFontStyle,
+								}}
+							>
+								Date: February 20, 2024
+							</p>
+							<p
+								style={{
+									fontSize: `${locationFontSize}px`,
+									color: locationColor,
+									fontWeight: locationFontWeight,
+									fontStyle: locationFontStyle,
+								}}
+							>
+								Location: 120, Adekunle Fajuyi Road
+							</p>
+							<p
+								style={{
+									fontSize: `${timeFontSize}px`,
+									color: timeColor,
+									fontWeight: timeFontWeight,
+									fontStyle: timeFontStyle,
+								}}
+							>
+								Time: 8:00 PM
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>

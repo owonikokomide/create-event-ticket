@@ -1,4 +1,4 @@
-import React from "react";
+
 import Hero from "../pages/hero.png";
 import "../css/Body.css";
 import Button from "../pages/Button";
