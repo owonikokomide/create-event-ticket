@@ -27,6 +27,7 @@ button {
 	overflow-y: scroll;
 	height: 91vh;
 	text-align: left;
+	overflow-x: hidden;
 	background-color: var(--bg-design);
 	padding: 20px;
 }
@@ -94,4 +95,25 @@ hr{
 	background-color: var(--text-color);
 	height: 1px;
 	margin-bottom: 10px;
+}
+@media screen and (max-width: 640px) {
+  .main-content .design {
+    flex-direction: column;
+    margin-top: 0;
+  }
+  .main-content .design .options {
+    width: 95%;
+    height: auto;
+    overflow-y: visible;
+    padding: 20px;
+    text-align: center;
+  }
+  .main-content .design .inner {
+    width: 100%;
+  }
+  .main-content .design .inner .ticket-preview {
+    width: 80%;
+    box-shadow: none;
+	margin: 20px 0;
+  }
 }
