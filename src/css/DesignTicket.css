@@ -1,18 +1,11 @@
 label {
 	display: block;
-	margin-bottom: 5px;
 }
 
 input[type="color"] {
-	width: 40px;
-	height: 40px;
+	width: 100%;
 	padding: 0;
 	border: none;
-	margin-bottom: 10px;
-}
-
-select {
-	width: 100%;
 	margin-bottom: 10px;
 }
 
@@ -34,7 +27,7 @@ button {
 	overflow-y: scroll;
 	height: 91vh;
 	text-align: left;
-	background-color: blue;
+	background-color: var(--bg-design);
 	padding: 20px;
 }
 .main-content .design .options::-webkit-scrollbar {
@@ -63,4 +56,42 @@ button {
 .main-content .design .inner .ticket-preview {
 	width: 80%;
 	padding: 20px;
+	box-shadow: 0 10px 20px var(--box-shadow)
+}
+.main-content .design .options .option-item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 7px;
+	gap: 5px;
+}
+.main-content .design .options h4{
+	margin-bottom: 5px;
+}
+
+.main-content .design .options input[type="color"] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	width: 30px;
+	height: 30px;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+.main-content .design .options input[type="color"]::-webkit-color-swatch {
+	border-radius: 7px;
+	border: none;
+}
+.main-content .design .options input[type="color"]::-moz-color-swatch {
+	border-radius: 7px;
+	border: none;
+}
+.main-content .design .options {
+	font-size: 0.8rem;
+}
+hr{
+	background-color: var(--text-color);
+	height: 1px;
+	margin-bottom: 10px;
 }

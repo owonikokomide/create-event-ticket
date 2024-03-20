@@ -5,7 +5,7 @@ import "../css/DesignTicket.css";
 
 const Design = ({ toggleMode, darkMode, toggleSidebar, sidebarCollapsed }) => {
 	const [backgroundColorType, setBackgroundColorType] = useState("plain");
-	const [backgroundColor, setBackgroundColor] = useState("#ffffff");
+	const [backgroundColor, setBackgroundColor] = useState("grey");
 	const [gradientStartColor, setGradientStartColor] = useState("#ffffff");
 	const [gradientEndColor, setGradientEndColor] = useState("#000000");
 
@@ -41,13 +41,13 @@ const Design = ({ toggleMode, darkMode, toggleSidebar, sidebarCollapsed }) => {
 		setBackgroundColor(e.target.value);
 	}
 
-     function handleGradientStartColorChange(e) {
-				setGradientStartColor(e.target.value);
-			}
+	function handleGradientStartColorChange(e) {
+		setGradientStartColor(e.target.value);
+	}
 
-			function handleGradientEndColorChange(e) {
-				setGradientEndColor(e.target.value);
-			}
+	function handleGradientEndColorChange(e) {
+		setGradientEndColor(e.target.value);
+	}
 	function generateTicket() {
 		// Generate ticket logic
 		const ticketPreview = document.getElementById("ticketPreview");
@@ -77,37 +77,43 @@ const Design = ({ toggleMode, darkMode, toggleSidebar, sidebarCollapsed }) => {
 			<div className="main-content">
 				<div className="design">
 					<div className="options">
-						<label htmlFor="backgroundColorType">Background Type:</label>
-						<select
-							id="backgroundColorType"
-							value={backgroundColorType}
-							onChange={toggleBackgroundColorOptions}
-						>
-							<option value="plain">Plain</option>
-							<option value="gradient">Gradient</option>
-						</select>
+						<div className="option-item">
+							<label htmlFor="backgroundColorType">Background Type:</label>
+							<select
+								id="backgroundColorType"
+								value={backgroundColorType}
+								onChange={toggleBackgroundColorOptions}
+							>
+								<option value="plain">Plain</option>
+								<option value="gradient">Gradient</option>
+							</select>
+						</div>
 						{backgroundColorType === "gradient" && (
 							<div>
-								<label htmlFor="gradientStartColor">
-									Gradient Start Color:
-								</label>
-								<input
-									type="color"
-									id="gradientStartColor"
-									value={gradientStartColor}
-									onChange={handleGradientStartColorChange}
-								/>
-								<label htmlFor="gradientEndColor">Gradient End Color:</label>
-								<input
-									type="color"
-									id="gradientEndColor"
-									value={gradientEndColor}
-									onChange={handleGradientEndColorChange}
-								/>
+								<div className="option-item">
+									<label htmlFor="gradientStartColor">
+										Gradient Start Color:
+									</label>
+									<input
+										type="color"
+										id="gradientStartColor"
+										value={gradientStartColor}
+										onChange={handleGradientStartColorChange}
+									/>
+								</div>
+								<div className="option-item">
+									<label htmlFor="gradientEndColor">Gradient End Color:</label>
+									<input
+										type="color"
+										id="gradientEndColor"
+										value={gradientEndColor}
+										onChange={handleGradientEndColorChange}
+									/>
+								</div>
 							</div>
 						)}
 						{backgroundColorType === "plain" && (
-							<div>
+							<div className="option-item">
 								<label htmlFor="backgroundColor">Background Color:</label>
 								<input
 									type="color"
@@ -117,154 +123,193 @@ const Design = ({ toggleMode, darkMode, toggleSidebar, sidebarCollapsed }) => {
 								/>
 							</div>
 						)}
+						<hr />
 						{/* Input fields for Event Name */}
-						<label htmlFor="eventNameFontSize">Event Name Font Size:</label>
-						<input
-							type="number"
-							id="eventNameFontSize"
-							min="8"
-							max="48"
-							step="2"
-							value={eventNameFontSize}
-							onChange={(e) => setEventNameFontSize(parseInt(e.target.value))}
-						/>
-						<label htmlFor="eventNameFontStyle">Event Name Font Style:</label>
-						<select
-							id="eventNameFontStyle"
-							value={eventNameFontStyle}
-							onChange={(e) => setEventNameFontStyle(e.target.value)}
-						>
-							<option value="normal">Normal</option>
-							<option value="italic">Italic</option>
-						</select>
+						<h4>Event Name</h4>
+						<div className="option-item">
+							<label htmlFor="eventNameFontSize">Font Size:</label>
+							<input
+								type="number"
+								id="eventNameFontSize"
+								min="8"
+								max="48"
+								step="2"
+								value={eventNameFontSize}
+								onChange={(e) => setEventNameFontSize(parseInt(e.target.value))}
+							/>
+						</div>
+						<div className="option-item">
+							<label htmlFor="eventNameFontStyle">Font Style:</label>
+							<select
+								id="eventNameFontStyle"
+								value={eventNameFontStyle}
+								onChange={(e) => setEventNameFontStyle(e.target.value)}
+							>
+								<option value="normal">Normal</option>
+								<option value="italic">Italic</option>
+							</select>
+						</div>
 
-						<label htmlFor="eventNameFontWeight">Event Font Weight:</label>
-						<select
-							id="eventNameFontWeight"
-							value={eventNameFontWeight}
-							onChange={(e) => setEventNameFontWeight(e.target.value)}
-						>
-							<option value="normal">Normal</option>
-							<option value="bold">Bold</option>
-						</select>
-						<label htmlFor="eventNameColor">Event Name Color:</label>
-						<input
-							type="color"
-							id="eventNameColor"
-							value={eventNameColor}
-							onChange={(e) => setEventNameColor(e.target.value)}
-						/>
+						<div className="option-item">
+							<label htmlFor="eventNameFontWeight">Font Weight:</label>
+							<select
+								id="eventNameFontWeight"
+								value={eventNameFontWeight}
+								onChange={(e) => setEventNameFontWeight(e.target.value)}
+							>
+								<option value="normal">Normal</option>
+								<option value="bold">Bold</option>
+							</select>
+						</div>
+						<div className="option-item">
+							<label htmlFor="eventNameColor">Color:</label>
+							<input
+								type="color"
+								id="eventNameColor"
+								value={eventNameColor}
+								onChange={(e) => setEventNameColor(e.target.value)}
+							/>
+						</div>
+						<hr />
 
 						{/* Input fields for Date */}
-						<label htmlFor="dateFontSize">Date Font Size:</label>
-						<input
-							type="number"
-							id="dateFontSize"
-							min="8"
-							max="48"
-							step="2"
-							value={dateFontSize}
-							onChange={(e) => setDateFontSize(parseInt(e.target.value))}
-						/>
-						<label htmlFor="dateFontStyle">Date Font Style:</label>
-						<select
-							id="dateFontStyle"
-							value={dateFontStyle}
-							onChange={(e) => setDateFontStyle(e.target.value)}
-						>
-							<option value="normal">Normal</option>
-							<option value="italic">Italic</option>
-						</select>
-						<label htmlFor="dateFontWeight">Date Font Weight:</label>
-						<select
-							id="dateFontWeight"
-							value={dateFontWeight}
-							onChange={(e) => setDateFontWeight(e.target.value)}
-						>
-							<option value="normal">Normal</option>
-							<option value="bold">Bold</option>
-						</select>
-						<label htmlFor="dateColor">Date Color:</label>
-						<input
-							type="color"
-							id="dateColor"
-							value={dateColor}
-							onChange={(e) => setDateColor(e.target.value)}
-						/>
-
+						<h4> Event Date</h4>
+						<div className="option-item">
+							<label htmlFor="dateFontSize">Font Size:</label>
+							<input
+								type="number"
+								id="dateFontSize"
+								min="8"
+								max="48"
+								step="2"
+								value={dateFontSize}
+								onChange={(e) => setDateFontSize(parseInt(e.target.value))}
+							/>
+						</div>
+						<div className="option-item">
+							<label htmlFor="dateFontStyle">Font Style:</label>
+							<select
+								id="dateFontStyle"
+								value={dateFontStyle}
+								onChange={(e) => setDateFontStyle(e.target.value)}
+							>
+								<option value="normal">Normal</option>
+								<option value="italic">Italic</option>
+							</select>
+						</div>
+						<div className="option-item">
+							<label htmlFor="dateFontWeight">Font Weight:</label>
+							<select
+								id="dateFontWeight"
+								value={dateFontWeight}
+								onChange={(e) => setDateFontWeight(e.target.value)}
+							>
+								<option value="normal">Normal</option>
+								<option value="bold">Bold</option>
+							</select>
+						</div>
+						<div className="option-item">
+							<label htmlFor="dateColor">Color:</label>
+							<input
+								type="color"
+								id="dateColor"
+								value={dateColor}
+								onChange={(e) => setDateColor(e.target.value)}
+							/>
+						</div>
+						<hr />
 						{/* Input fields for Location */}
-						<label htmlFor="locationFontSize">Location Font Size:</label>
-						<input
-							type="number"
-							id="locationFontSize"
-							min="8"
-							max="48"
-							step="2"
-							value={locationFontSize}
-							onChange={(e) => setLocationFontSize(parseInt(e.target.value))}
-						/>
-						<label htmlFor="locationFontStyle">Location Font Style:</label>
-						<select
-							id="locationFontStyle"
-							value={locationFontStyle}
-							onChange={(e) => setLocationFontStyle(e.target.value)}
-						>
-							<option value="normal">Normal</option>
-							<option value="italic">Italic</option>
-						</select>
-						<label htmlFor="locationFontWeight">Location Font Weight:</label>
-						<select
-							id="locationFontWeight"
-							value={locationFontWeight}
-							onChange={(e) => setLocationFontWeight(e.target.value)}
-						>
-							<option value="normal">Normal</option>
-							<option value="bold">Bold</option>
-						</select>
-						<label htmlFor="locationColor">Location Color:</label>
-						<input
-							type="color"
-							id="locationColor"
-							value={locationColor}
-							onChange={(e) => setLocationColor(e.target.value)}
-						/>
+						<h4>Event Location</h4>
+						<div className="option-item">
+							<label htmlFor="locationFontSize">Font Size:</label>
+							<input
+								type="number"
+								id="locationFontSize"
+								min="8"
+								max="48"
+								step="2"
+								value={locationFontSize}
+								onChange={(e) => setLocationFontSize(parseInt(e.target.value))}
+							/>
+						</div>
+						<div className="option-item">
+							<label htmlFor="locationFontStyle">Font Style:</label>
+							<select
+								id="locationFontStyle"
+								value={locationFontStyle}
+								onChange={(e) => setLocationFontStyle(e.target.value)}
+							>
+								<option value="normal">Normal</option>
+								<option value="italic">Italic</option>
+							</select>
+						</div>
+						<div className="option-item">
+							<label htmlFor="locationFontWeight">Font Weight:</label>
+							<select
+								id="locationFontWeight"
+								value={locationFontWeight}
+								onChange={(e) => setLocationFontWeight(e.target.value)}
+							>
+								<option value="normal">Normal</option>
+								<option value="bold">Bold</option>
+							</select>
+						</div>
+						<div className="option-item">
+							<label htmlFor="locationColor">Color:</label>
+							<input
+								type="color"
+								id="locationColor"
+								value={locationColor}
+								onChange={(e) => setLocationColor(e.target.value)}
+							/>
+						</div>
+						<hr />
 
 						{/* Input fields for Time */}
-						<label htmlFor="timeFontSize">Time Font Size:</label>
-						<input
-							type="number"
-							id="timeFontSize"
-							min="8"
-							max="48"
-							step="2"
-							value={timeFontSize}
-							onChange={(e) => setTimeFontSize(parseInt(e.target.value))}
-						/>
-						<label htmlFor="timeFontStyle">Time Font Style:</label>
-						<select
-							id="timeFontStyle"
-							value={timeFontStyle}
-							onChange={(e) => setTimeFontStyle(e.target.value)}
-						>
-							<option value="normal">Normal</option>
-							<option value="italic">Italic</option>
-						</select>
-						<label htmlFor="timeFontWeight">Time Font Weight:</label>
-						<select
-							id="timeFontWeight"
-							value={timeFontWeight}
-							onChange={(e) => setTimeFontWeight(e.target.value)}
-						>
-							<option value="normal">Normal</option>
-							<option value="bold">Bold</option>
-						</select>
-						<label htmlFor="timeColor">Time Color:</label>
-						<input
-							type="color"
-							id="timeColor"
-							value={timeColor}
-							onChange={(e) => setTimeColor(e.target.value)}
-						/>
+						<h4>Event Time</h4>
+						<div className="option-item">
+							<label htmlFor="timeFontSize">Font Size:</label>
+							<input
+								type="number"
+								id="timeFontSize"
+								min="8"
+								max="48"
+								step="2"
+								value={timeFontSize}
+								onChange={(e) => setTimeFontSize(parseInt(e.target.value))}
+							/>
+						</div>
+						<div className="option-item">
+							<label htmlFor="timeFontStyle">Font Style:</label>
+							<select
+								id="timeFontStyle"
+								value={timeFontStyle}
+								onChange={(e) => setTimeFontStyle(e.target.value)}
+							>
+								<option value="normal">Normal</option>
+								<option value="italic">Italic</option>
+							</select>
+						</div>
+						<div className="option-item">
+							<label htmlFor="timeFontWeight">Font Weight:</label>
+							<select
+								id="timeFontWeight"
+								value={timeFontWeight}
+								onChange={(e) => setTimeFontWeight(e.target.value)}
+							>
+								<option value="normal">Normal</option>
+								<option value="bold">Bold</option>
+							</select>
+						</div>
+						<div className="option-item">
+							<label htmlFor="timeColor">Color:</label>
+							<input
+								type="color"
+								id="timeColor"
+								value={timeColor}
+								onChange={(e) => setTimeColor(e.target.value)}
+							/>
+						</div>
 
 						<button onClick={generateTicket}>Generate Ticket</button>
 					</div>
