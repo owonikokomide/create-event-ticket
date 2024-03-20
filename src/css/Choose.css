@@ -1,0 +1,12 @@
+.title-h3{
+  color: #e66205;
+  font-size: 1.7rem;
+  font-weight: 200;
+  text-shadow: 0 0 1px #dcae8d, 0 0 2px #dbdbe7;
+}
+.text-p{
+  color: antiquewhite;
+  padding: 1rem;
+  font-size: large;
+  word-spacing: 0.6rem;
+}
