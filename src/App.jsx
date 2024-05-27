@@ -19,7 +19,7 @@ function App() {
 				<Route path="/home" element={<Home />} />
 				<Route path="/register" element={<RegisterForm />} />
 				<Route path="/login" element={<Signin />} />
-				<Route path="/create-ticket" element={<Create_ticket />} />
+				<Route path="/create-ticket" element={<Create_ticket />} /> 
 				<Route
 					path="/create-ticket/registration"
 					element={<Ticket_registration />}
