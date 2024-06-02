@@ -9,7 +9,7 @@ const MainDashboard = ({ toggleMode, darkMode, toggleSidebar, sidebarCollapsed }
 			<Header
 				toggleMode={toggleMode}
 				darkMode={darkMode}
-				toggleSidebar={toggleSidebar}
+				toggleSidebar={toggleSidebar} 
 				sidebarCollapsed={sidebarCollapsed}
 			/>
 			<div className="main-content">
