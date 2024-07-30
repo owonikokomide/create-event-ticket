@@ -6,7 +6,7 @@ const Axiospost = () => {
         name: '',
         age: ''
     })
-    const handleInput = (event) =>{
+    const handleInput = (event) =>{ 
         setPost({...post, [event.target.name]: event.target.value})
     }
     function handleSubmit(event){
