@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 const AccountInfoForm = ({ prevStep, toggleModal }) => {
 	// Handle form submission for account information
 	const handleSubmit = (e) => {
-		e.preventDefault();
+		e.preventDefault(); 
 		// Add logic to handle form submission (e.g., sending data to backend)
 		toggleModal();
 	};
