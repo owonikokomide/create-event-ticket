@@ -4,7 +4,7 @@ import { useState } from "react";
 const EventDetailsForm = ({ nextStep, prevStep }) => {
 	const [ticketOption, setTicketOption] = useState("unlimited");
 	const [ticketCount, setTicketCount] = useState("");
-
+ 
 	const handleOptionChange = (e) => {
 		setTicketOption(e.target.value);
 	};
