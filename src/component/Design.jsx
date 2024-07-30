@@ -10,7 +10,7 @@ const Design = ({ toggleMode, darkMode, toggleSidebar, sidebarCollapsed }) => {
 	const [gradientEndColor, setGradientEndColor] = useState("#000000");
 
 	// State and handlers for Event Name
-	const [eventNameFontSize, setEventNameFontSize] = useState(24);
+	const [eventNameFontSize, setEventNameFontSize] = useState(24); 
 	const [eventNameFontStyle, setEventNameFontStyle] = useState("normal");
 	const [eventNameFontWeight, setEventNameFontWeight] = useState("bold");
 	const [eventNameColor, setEventNameColor] = useState("#000000");
